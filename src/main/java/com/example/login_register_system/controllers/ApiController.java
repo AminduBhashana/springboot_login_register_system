@@ -1,4 +1,4 @@
-package com.example.login_register_system.api;
+package com.example.login_register_system.controllers;
 
 import com.example.login_register_system.entity.User;
 import com.example.login_register_system.repository.UserRepository;

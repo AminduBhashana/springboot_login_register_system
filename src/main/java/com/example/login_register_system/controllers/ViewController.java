@@ -1,4 +1,4 @@
-package com.example.login_register_system.api;
+package com.example.login_register_system.controllers;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
