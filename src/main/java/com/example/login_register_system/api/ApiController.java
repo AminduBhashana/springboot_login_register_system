@@ -27,6 +27,11 @@ public class ApiController {
     @PostMapping("login")
     public RedirectView login(@RequestParam String email, @RequestParam String password, HttpSession session) {
         User user = userRepo.findByEmail(email);
+        if (user == null) {
+            session.setAttribute("error", "Invalid email or password!");
+            return new RedirectView("/login");
+        }
+
         boolean isValid = PasswordUtils.checkPassword(password, user.getPassword());
         if (isValid) {
             session.setAttribute("user", user);
@@ -34,7 +39,7 @@ public class ApiController {
 
             return new RedirectView("/welcome");
         } else {
-            session.setAttribute("message", "Invalid email or password!");
+            session.setAttribute("error", "Invalid email or password!");
             return new RedirectView("/login");
         }
     }

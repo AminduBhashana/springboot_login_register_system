@@ -53,6 +53,11 @@
       <span th:text="${session.message}"></span>
     </div>
   </div>
+  <div class="alert-container" th:if="${session.error}">
+    <div class="alert alert-danger" role="alert">
+      <span th:text="${session.error}"></span>
+    </div>
+  </div>
   <form th:action="@{/api/login}" method="post">
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
