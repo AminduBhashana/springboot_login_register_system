@@ -27,10 +27,4 @@ public class ViewController {
         session.invalidate();
         return "redirect:/login";
     }
-
-    @GetMapping("clearMessage")
-    @ResponseBody
-    public void clearMessage(HttpSession session) {
-        session.removeAttribute("message");
-    }
 }

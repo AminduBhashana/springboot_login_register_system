@@ -43,4 +43,10 @@ public class ApiController {
             return new RedirectView("/login");
         }
     }
+
+    @GetMapping("clearMessage")
+    @ResponseBody
+    public void clearMessage(HttpSession session) {
+        session.removeAttribute("message");
+    }
 }
